@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/ekho/capistrano-git-with-submodules.git
+  revision: d1a85bffe0db2c314353155c119ccf98ee224585
+  specs:
+    capistrano-git-with-submodules (2.0.3)
+      capistrano (~> 3.7)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -10,8 +17,6 @@ GEM
       sshkit (>= 1.9.0)
     capistrano-file-permissions (1.0.0)
       capistrano (~> 3.0)
-    capistrano-git-with-submodules (2.0.3)
-      capistrano (~> 3.7)
     capistrano-service (0.0.2)
       capistrano (>= 3.0.0.pre)
     concurrent-ruby (1.1.6)
@@ -31,7 +36,7 @@ PLATFORMS
 DEPENDENCIES
   capistrano (= 3.11.0)
   capistrano-file-permissions
-  capistrano-git-with-submodules (~> 2.0)
+  capistrano-git-with-submodules (~> 2.0)!
   capistrano-service
 
 BUNDLED WITH
