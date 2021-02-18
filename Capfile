@@ -11,8 +11,7 @@ require 'capistrano/scm/git'
 install_plugin Capistrano::SCM::Git
 
 # Include the git submodule strategy for capistrano
-require "capistrano/scm/git-with-submodules"
-install_plugin Capistrano::SCM::Git::WithSubmodules
+
 
 # Includes everything else
 require 'yaml'

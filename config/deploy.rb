@@ -68,3 +68,4 @@ end
 namespace :deploy do
   after :publishing, 'service:apache2:restart'
 end
+
