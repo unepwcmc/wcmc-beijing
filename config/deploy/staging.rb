@@ -12,7 +12,7 @@ set :stage, :staging
 set :stage_url, 'wordpress-staging.wcmc-beijing.com'
 
 # The environment's server credentials
-server '140.179.53.184', user: 'wcmc', roles: %w(web app db)
+server 'staging.wcmc-beijing.com', user: 'wcmc', roles: %w(web app db)
 
 # The deploy path to the website on this environment's server.
 set :deploy_to, "/home/#{fetch(:deploy_user)}/#{fetch(:application)}"
