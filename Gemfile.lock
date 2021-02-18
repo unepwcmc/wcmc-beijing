@@ -31,7 +31,7 @@ PLATFORMS
 DEPENDENCIES
   capistrano (= 3.11.0)
   capistrano-file-permissions
-  capistrano-git-with-submodules (= 2.0.3)
+  capistrano-git-with-submodules (~> 2.0)
   capistrano-service
 
 BUNDLED WITH
