@@ -115,11 +115,23 @@ function custom_load_js()
 {
 	// Enqueue Javascript
 	if (!is_admin()) {
+		// Deregister default jQuery call from CDN (Can't reach from China)
+		wp_deregister_script('jquery');
+		// Load jQuery locally
+		wp_enqueue_script('jquery', get_template_directory_uri() . '/dist/vendor/jquery.min.js', array(), null, true);
+
 		wp_enqueue_script('polyfill_js', 'https://cdn.polyfill.io/v2/polyfill.min.js?features=Promise,fetch,Symbol,Array.prototype.@@iterator,Element.prototype.classList,Object.values,Object.entries,IntersectionObserver', '', '', true);
 		wp_enqueue_script('vendor_js', get_template_directory_uri() . '/dist/build/js/vendor.js', '', '', true);
 		wp_enqueue_script('theme_js', get_template_directory_uri() . '/dist/build/js/app.js', array('vendor_js'), '', true);
 	}
 }
+
+// include custom jQuery
+function shapeSpace_include_custom_jquery() {
+
+
+}
+add_action('wp_enqueue_scripts', 'shapeSpace_include_custom_jquery');
 
 /*-------------------------------------------------------------------------------------------------
 SIDEBARS
