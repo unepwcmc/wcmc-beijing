@@ -88,7 +88,6 @@ LOAD STYLES
 
 function custom_styles()
 {
-	wp_enqueue_style('google_fonts', 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
 	wp_enqueue_style('flickity', 'https://unpkg.com/flickity@2/dist/flickity.min.css');
 	wp_enqueue_style('main_css', get_stylesheet_directory_uri() . '/dist/build/css/main.css');
 	wp_enqueue_style('ie_css', get_stylesheet_directory_uri() . '/dist/build/css/ie.css');
@@ -120,18 +119,12 @@ function custom_load_js()
 		// Load jQuery locally
 		wp_enqueue_script('jquery', get_template_directory_uri() . '/dist/vendor/jquery.min.js', array(), null, true);
 
-		wp_enqueue_script('polyfill_js', 'https://cdn.polyfill.io/v2/polyfill.min.js?features=Promise,fetch,Symbol,Array.prototype.@@iterator,Element.prototype.classList,Object.values,Object.entries,IntersectionObserver', '', '', true);
+		// TODO: Blocked in China - find alternative
+		// wp_enqueue_script('polyfill_js', 'https://cdn.polyfill.io/v2/polyfill.min.js?features=Promise,fetch,Symbol,Array.prototype.@@iterator,Element.prototype.classList,Object.values,Object.entries,IntersectionObserver', '', '', true);
 		wp_enqueue_script('vendor_js', get_template_directory_uri() . '/dist/build/js/vendor.js', '', '', true);
 		wp_enqueue_script('theme_js', get_template_directory_uri() . '/dist/build/js/app.js', array('vendor_js'), '', true);
 	}
 }
-
-// include custom jQuery
-function shapeSpace_include_custom_jquery() {
-
-
-}
-add_action('wp_enqueue_scripts', 'shapeSpace_include_custom_jquery');
 
 /*-------------------------------------------------------------------------------------------------
 SIDEBARS
