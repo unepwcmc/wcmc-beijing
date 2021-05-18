@@ -1,0 +1,56 @@
+@import "../../src/scss/utilities/variables";
+@import "../../src/scss/utilities/mixins";
+
+.home-hero {
+  @include spacer-body-small;
+  position: relative;
+}
+
+.home-hero__inner {
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+.home-hero__background-image,
+.block-editor__container img.home-hero__background-image {
+  @include absolute_fill;
+  @include object_fit_cover;
+  z-index: 1;
+}
+
+.home-hero__overlay {
+  @include absolute_fill;
+  background: #000000;
+  z-index: 2;
+}
+
+.home-hero__body {
+  position: relative;
+  z-index: 3;
+}
+
+.home-hero__content {
+  color: #fff;
+  max-width: 90%;
+
+  & *:last-child {
+    margin-bottom: 0;
+  }
+
+  .home-hero--dark & {
+    color: $color-secondary;
+  }
+}
+
+.home-hero__title,
+.block-editor .editor-styles-wrapper .home-hero__title {
+  @include heading;
+  color: $color-white;
+  margin: 0 auto $item-padding * 2;
+  text-transform: uppercase;
+}
+
+.home-hero__text {
+  font-weight: $fw-regular;
+  margin-bottom: $item-padding * 2;
+}

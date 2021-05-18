@@ -1,0 +1,32 @@
+@import "../../src/scss/utilities/variables";
+@import "../../src/scss/utilities/mixins";
+
+.image-blockquote {
+  position: relative;
+  background-color: $color-secondary;
+  overflow: hidden;
+}
+
+.image-blockquote_background-image {
+  @include absolute_fill;
+  @include object_fit_cover;
+  z-index: 1;
+}
+
+.image-blockquote_content {
+  padding: 60px 50px;
+  position: relative;
+  z-index: 2;
+}
+
+h4.image-blockquote_text,
+.block-editor .editor-styles-wrapper h4.image-blockquote_text {
+  color: $color-white;
+  font-size: 40px;
+  line-height: 46px;
+  margin: 0 auto;
+
+  @include break-min($sm) {
+    max-width: calc((8 / 12) * 100%);
+  }
+}
