@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Featured Link Block
+ * Carousel Full Width Block
  * Created by UNEP-WCMC
  * With Genesis Custom Blocks for Gutenberg - https://wpengine.co.uk/genesis-custom-blocks/
  */
