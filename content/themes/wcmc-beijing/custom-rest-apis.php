@@ -11,7 +11,7 @@ function get_all_available_locales() {
   $index = 0;
   if ( !empty( $languages ) ) {
     foreach( $languages as $language ) {
-      $language_code = $language['language_code'] == 'zh-hans' ? 'zh' : $language['language_code'];
+      $language_code = substr($language['language_code'], 0, 2);
 
       $locales_array[$index] = array(
         'default_locale' => $language['default_locale'],
