@@ -10,6 +10,12 @@ if (function_exists('acf_add_options_page')) {
 	));
 
 	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Site Translations Settings',
+		'menu_title'	=> 'Translations',
+		'parent_slug'	=> 'site-general-settings',
+	));
+
+	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Site Contact Settings',
 		'menu_title'	=> 'Contact',
 		'parent_slug'	=> 'site-general-settings',
