@@ -460,15 +460,15 @@
 @mixin button_arrow {
   @include button_text;
   @include font_sub-title;
-  padding-right: 1.375rem; // 22px
+  padding-right: 22px;
   position: relative;
 
   .icon-arrow {
     color: $color-primary;
-    width: 1rem;
+    width: 16px;
 
     position: absolute;
-    top: 0.2rem;
+    top: 3.2px;
     right: 0;
 
     transition: transform .3s ease;
@@ -477,7 +477,7 @@
 
   &:hover {
     .icon-arrow {
-      transform: translateX(0.125rem); // 2px
+      transform: translateX(2px);
     }
   }
 }
