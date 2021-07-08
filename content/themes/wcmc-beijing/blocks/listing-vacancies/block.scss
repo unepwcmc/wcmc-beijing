@@ -1,0 +1,55 @@
+@import "../../src/scss/utilities/variables";
+@import "../../src/scss/utilities/mixins";
+
+.block-editor .editor-styles-wrapper {
+  .listing-list__items {
+    @include listing_items_simple;
+  }
+
+  .listing-list__item {
+    @include listing_item_simple;
+  }
+
+  h4.card-vacancy__label {
+    @include font_sub-title;
+    color: $color-dark-grey;
+    font-family: $font-body;
+    letter-spacing: normal;
+    margin: 0;
+    padding-bottom: 6px;
+  }
+
+  h3.card-vacancy__title {
+    @include font_heading-3;
+    color: $color-primary;
+    font-family: $font-body;
+    letter-spacing: normal;
+    margin-top: 0;
+    margin-bottom: $item-padding-small;
+    text-transform: none;
+  }
+
+  h5.card-vacancy__subtitle {
+    @include font_copy-text-1;
+    font-family: $font-body;
+    font-weight: $fw-bold;
+    letter-spacing: normal;
+    margin-top: 6px;
+    margin-bottom: $item-padding-small;
+    text-transform: none;
+  }
+
+  .card-vacancy__text * {
+    @include font_copy-text-1;
+    color: inherit;
+    font-weight: $fw-regular;
+    margin-top: 6px;
+    margin-bottom: $item-padding-small;
+  }
+
+  a.card-vacancy__button {
+    @include button_arrow;
+    color: $color-secondary;
+    margin-top: $item-padding;
+  }
+}

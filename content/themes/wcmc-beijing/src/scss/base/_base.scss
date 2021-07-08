@@ -95,37 +95,15 @@ FORMS
 --------------------------------------------------------------*/
 
 label {
-  font-size: inherit;
+  @include form_label;
 }
 
 fieldset {
   margin-bottom: 1em;
 }
 
-input,
-textarea {
-  @include font_small_text;
-  background-color: $color-white;
-  border: 1px solid $color-secondary;
-  border-radius: 3px;
-  color: $color-secondary;
-  font-family: $font-body;
-  font-weight: 600;
-  margin: 0;
-  outline: none;
-  padding: 10px;
-  width: 100%;
-
-  display: block;
-
-  transition: color 0.3s ease;
-
-  &::placeholder {
-    font-family: $font-body;
-    color: inherit;
-    font-weight: 400;
-    color: $color-grey-text;
-  }
+input[type="color"], input[type="date"], input[type="datetime-local"], input[type="datetime"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], textarea {
+  @include form_input;
 }
 
 input[type="checkbox"],
@@ -134,26 +112,11 @@ input[type="radio"] {
 }
 
 input[type="submit"] {
-  @include button_primary;
-  @include button_wider;
+  @include button_submit;
 }
 
 select {
-  @include font_small_text;
-  width: 100%;
-  -webkit-appearance: none;
-  appearance: none;
-  border: 1px solid $color-secondary;
-  max-width: 100%;
-  font-family: $font-body;
-  margin: 0;
-  padding: 10px;
-  border-radius: 3px;
-  background-color: #fff;
-  background-image: url("../img/icon-angle-down-secondary.svg");
-  background-repeat: no-repeat, repeat;
-  background-position: right 0.7em top 50%, 0 0;
-  background-size: auto 7px, 100%;
+  @include form_select;
 }
 
 input[type="date"] {
