@@ -2,27 +2,6 @@
 TYPOGRAPHY
 ------------------------------------------------------------------------------------------------- */
 
-.editor-block-list__layout .wp-block-heading,
-.lyt-Body {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @include heading;
-  }
-
-  h1.paragraph,
-  h2.paragraph,
-  h3.paragraph,
-  h4.paragraph,
-  h5.paragraph,
-  h6.paragraph {
-    @include paragraph;
-  }
-}
-
 .editor-block-list__layout,
 .lyt-Body {
   a {
