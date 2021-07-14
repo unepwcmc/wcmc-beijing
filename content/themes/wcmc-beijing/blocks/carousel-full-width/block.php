@@ -1,14 +1,9 @@
 <?php
-
 /**
  * Carousel Full Width Block
  * Created by UNEP-WCMC
  * With Genesis Custom Blocks for Gutenberg - https://wpengine.co.uk/genesis-custom-blocks/
  */
-
-  // TODO: Build Gutenberg version
-
-  $index = 0;
 ?>
 
 <div class="carousel carousel--full-width">
@@ -17,7 +12,7 @@
 
     <div class="carousel__cells">
 
-      <?php while ( block_rows( 'cells' ) && ( $index < 1 )) : block_row( 'cells' );?>
+      <?php block_row( 'cells' );?>
 
         <div class="carousel__cell">
           <div class="carousel-cell__content">
@@ -57,8 +52,6 @@
             class="carousel-cell__background-image"
           >
         </div>
-
-      <?php $index++; endwhile; ?>
 
     </div>
 
