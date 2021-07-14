@@ -153,57 +153,110 @@
 
 @mixin font_heading-1 {
   font-size: 40px;
-  line-height: 48px;
+  line-height: 46px;
 
   @include break-min($sm) {
-    font-size: 50px;
-    line-height: 60px;
+    font-size: 55px;
+    line-height: 75px;
+  }
+
+  @include break-min($md) {
+    font-size: 70px;
+    line-height: 86px;
   }
 }
 
 @mixin font_heading-2 {
-  font-size: 34px;
-  line-height: 40px;
+  font-size: 30px;
+  line-height: 38px;
 
   @include break-min($sm) {
-    font-size: 40px;
-    line-height: 48px;
+    font-size: 35px;
+    line-height: 42px;
+  }
+
+  @include break-min($md) {
+    font-size: 50px;
+    line-height: 61px;
   }
 }
 
 @mixin font_heading-3 {
-  font-size: 28px;
-  line-height: 32px;
+  font-size: 25px;
+  line-height: 30px;
 
   @include break-min($sm) {
-    font-size: 28px;
+    font-size: 25px;
+    line-height: 30px;
+  }
+
+  @include break-min($md) {
+    font-size: 30px;
     line-height: 36px;
   }
 }
 
-@mixin font_heading-4 {
-  font-size: 20px;
-  line-height: 22px;
+@mixin font_title-1 {
+  font-size: 22px;
+  line-height: 25px;
 
   @include break-min($sm) {
-    font-size: 22px;
-    line-height: 26px;
+    font-size: 25px;
+    line-height: 35px;
+  }
+
+  @include break-min($md) {
+    font-size: 25px;
+    line-height: 35px;
   }
 }
 
-@mixin font_heading-5 {
-  font-size: 16px;
-  line-height: 18px;
+@mixin font_title-2 {
+  font-size: 18px;
+  line-height: 24px;
+
+  @include break-min($sm) {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  @include break-min($md) {
+    font-size: 20px;
+    line-height: 24px;
+  }
 }
 
-@mixin font_heading-6 {
+@mixin font_sub-title {
   font-size: 14px;
-  line-height: 16px;
+  font-weight: $fw-bold;
+  line-height: 25px;
+  text-transform: uppercase;
 }
 
-@mixin font_large_text {
-  font-size: 20px;
-  line-height: 32px;
+@mixin font_copy-text-1 {
+  font-size: 16px;
+  line-height: 19px;
+}
+
+@mixin font_copy-text-2 {
+  font-size: 18px;
+  line-height: 26px;
+
+  @include break-min($sm) {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  @include break-min($sm) {
+    font-size: 22px;
+    line-height: 35px;
+  }
+}
+
+@mixin font_caption_text {
+  font-size: 16px;
+  font-style: italic;
+  line-height: 19px;
 }
 
 @mixin font_base_text {
@@ -212,38 +265,13 @@
 }
 
 @mixin font_small_text {
-  font-size: 14px;
-  line-height: 16px;
-}
-
-@mixin h1 {
-  @include font_heading-1;
-}
-
-@mixin h2 {
-  @include font_heading-2;
-}
-
-@mixin h3 {
-  @include font_heading-3;
-}
-
-@mixin h4 {
-  @include font_heading-4;
-}
-
-@mixin h5 {
-  @include font_heading-5;
-}
-
-@mixin h6 {
-  @include font_heading-6;
+  font-size: smaller;
 }
 
 @mixin paragraph {
   @include font_base_text;
   color: inherit;
-  margin-bottom: $item-padding;
+  margin-bottom: $item-padding-small;
 }
 
 //-------------------------------------------------
@@ -309,6 +337,11 @@
 //-------------------------------------------------
 // Buttons
 //-------------------------------------------------
+
+@mixin button_reset {
+  appearance: none;
+  background-color: transparent;
+}
 
 @mixin button {
   appearance: none;
@@ -412,6 +445,40 @@
     color: $color-secondary;
     border-color: darken($color-accent, 20%);
     background-color: darken($color-accent, 20%);
+  }
+}
+
+@mixin button_text {
+  @include button_reset;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transition: background-color 0.3s ease-in-out, color 0.3s ease,
+    border-color 0.35s ease;
+}
+
+@mixin button_arrow {
+  @include button_text;
+  @include font_sub-title;
+  padding-right: 22px;
+  position: relative;
+
+  .icon-arrow {
+    color: $color-primary;
+    width: 16px;
+
+    position: absolute;
+    top: 3.2px;
+    right: 0;
+
+    transition: transform .3s ease;
+    will-change: transform;
+  }
+
+  &:hover {
+    .icon-arrow {
+      transform: translateX(2px);
+    }
   }
 }
 

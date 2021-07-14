@@ -1,0 +1,76 @@
+@import "../../src/scss/utilities/variables";
+@import "../../src/scss/utilities/mixins";
+
+.carousel {
+  @include spacer;
+}
+
+.carousel__cells {
+  width: 100%;
+}
+
+.carousel__cell {
+  overflow: hidden;
+  padding-bottom: calc((5 / 4) * 100%);
+  width: 100%;
+
+  position: relative;
+
+  @include break-min($sm) {
+    padding-bottom: calc((25 / 48) * 100%);
+  }
+}
+
+.carousel-cell__content {
+  background-color: $color-white;
+  width: 100%;
+  max-width: calc((9 / 12) * 100%);
+  padding: 16px 16px 32px;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+
+  @include break-min($sm) {
+    max-width: calc((6 / 12) * 100%);
+  }
+}
+
+h5.carousel-cell__label,
+.block-editor .editor-styles-wrapper h5.carousel-cell__label {
+  @include font_sub-title;
+  line-height: 1;
+  margin-bottom: $item-padding-small;
+}
+
+h4.carousel-cell__title,
+.block-editor .editor-styles-wrapper h4.carousel-cell__title {
+  @include font_title-2;
+  margin-bottom: $item-padding-small;
+  padding-right: 80px;
+}
+
+p.carousel-cell__text,
+.block-editor .editor-styles-wrapper p.carousel-cell__text {
+  display: none;
+  padding-right: 16px;
+
+  @include break-min($sm) {
+    margin-bottom: $item-padding-small;
+
+    display: block;
+  }
+}
+
+p.carousel-cell__link,
+.block-editor .editor-styles-wrapper p.carousel-cell__link {
+  @include button_arrow;
+  display: inline-block;
+  margin: 0;
+}
+
+.carousel-cell__background-image {
+  @include absolute_fill;
+  @include object_fit_cover;
+}
