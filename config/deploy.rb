@@ -3,7 +3,7 @@
 ################################################################################
 
 # Lock the project to Capistrano 3.11.0
-lock '3.11.0'
+lock '3.16.0'
 
 # The WordPress admin user
 set :wp_user, 'wcmc'
